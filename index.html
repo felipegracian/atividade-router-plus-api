@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/header.js" defer type="module"></script>
+    <script src="./js/index.js" defer type="module"></script>
+    <script src="./js/app.js" defer type="module"></script>
+    <script src="./js/cookies.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <title>PixaBay</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="container-left-side">
+                <logo-company foto="./companylogo.png"></logo-company>
+                <span class="pixabay">Pixabay</span>
+            </div>
+            <search-bar></search-bar>
+            <dropdown-my-application></dropdown-my-application>
+            
+            
+
+            <nav class="dp-menu">
+                <ul>
+                    <ul>
+                        <div class="linha">
+                            <a href="./index.html" class="fotos">Fotos</a>
+                        </div>
+                        <div class="linha">
+                            <a href="/videos" class="videos" onclick="route()">Vídeos</a>
+                        </div>
+                        
+                    </ul>
+                </ul>
+            </nav>
+            
+
+        </div>
+    </header>
+    <main id="root">
+        <div class="messageMain">
+            <span>
+                Mais de 1 milhão de fotos e vídeos sobre nossos assuntos para você!
+            </span>
+        </div>
+
+        
+
+        <div class="container-cards" id="container-cards">
+            
+        </div>
+
+    </main>
+</body>
+
+</html>
