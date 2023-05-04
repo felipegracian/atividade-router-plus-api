@@ -23,18 +23,21 @@ const criarCardVideos = (lookingFor) =>{
 
     
 
-    buttonPlay.append(linkHref, buttonImage)
+    linkHref.append(buttonImage)
+    buttonPlay.append(linkHref)
     card.append(videoCard, buttonPlay)
 
     return card
 }
 
-const carregarCards = () => {
+export const carregarCards = () => {
 
     const containerCardVideos = document.getElementById('container-cards')
 
 
     const campos = jsonVideos.hits.map(criarCardVideos)
+
+    
 
     containerCardVideos.replaceChildren(...campos)
     
@@ -42,4 +45,3 @@ const carregarCards = () => {
 }
 
 
-carregarCards()

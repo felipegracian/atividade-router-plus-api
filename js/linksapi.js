@@ -17,3 +17,12 @@ export const getVideos = async() =>{
 
     return data
 }
+
+export const getImageByQuery = async (queryWord) =>{
+    const url = `https://pixabay.com/api/?key=35962126-f84ad156f06967ac7f15a126c&q=${queryWord}&image_type=photo`
+
+    const response = await fetch(url)
+    const data = await response.json()
+
+    return data
+}

@@ -9,7 +9,7 @@
     height: 200px;
     width: 300px;
     border-radius: 5%;
-    background-color: yellow;
+    background-color: lightgray;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,15 +61,25 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-left: 7px;
     
     
 }
 .button_play img{
-    height: 100px;
-    width: 100px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .button_play img:hover{
-    height: 80px;
-    width: 80px;
-    background-color: #21C31E;
+    cursor: pointer;
+    height: 80%;
+    width: 80%;
+    transition: 0.3s;
+}
+
+.button_play a{
+    width:100px;
+    height: 100px;
 }

@@ -1,5 +1,6 @@
 'use strict'
 
+ 
 class logoHeaderMyApllication extends HTMLElement {
     constructor() {
         super()
@@ -67,7 +68,17 @@ class searchBarMyApplication extends HTMLElement {
         super()
 
         this.shadow = this.attachShadow({ mode: 'open' })
+        this.palavra = ''
     
+    }
+
+
+    static get observedAttributes() {
+        return ['palavra']
+    }
+
+    attributeChangedCallback(attr, oldValue, newValue) {
+        this[attr] = newValue
     }
 
     
@@ -125,6 +136,11 @@ class searchBarMyApplication extends HTMLElement {
         bar.type = "text"
         bar.classList.add('txtBusca')
         bar.placeholder = "O que você procura?"
+        
+        const valor = bar.addEventListener('change', () => {
+            const atributoSet = this.setAttribute('palavra', bar.value)
+            // const atributoGet = this.getAttribute('palavra', bar.value)
+        })
 
         const imagem = document.createElement('img')
         imagem.src = "../searchicon.png"
@@ -136,128 +152,9 @@ class searchBarMyApplication extends HTMLElement {
     }
 }
 
-class dropDownMyApplication extends HTMLElement{
-    constructor() {
-        super()
 
-        this.shadow = this.attachShadow({ mode: 'open' })
-    
-    }
-
-    
-
-    connectedCallback() {
-        this.shadow.appendChild(this.component())
-        this.shadow.appendChild(this.styles())
-    }
-
-    styles() {
-        const css = document.createElement('style')
-        css.textContent = `
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .dropdown {
-            float: left;
-            overflow: hidden;
-        }
-        
-        .dropdown .dropbtn {
-            border: none;
-            outline: none;
-            background-color: #D9D9D9;
-            color: black;
-            font-size: 1.25rem;
-            font-family: inherit;
-            margin: 0;
-            cursor: pointer;
-            font-weight: 500;
-            width: 100px;
-            height: 50px;
-            border: solid 1px black;
-        }
-        
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #D9D9D9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            font-size: 1rem;
-        }
-        
-        .linha {
-            position: absolute;
-            width: 100%;
-            top: 0;
-            border: 1px solid var(--cor-marrom);
-        }
-        
-        .dropdown-content text {
-            float: none;
-            color: black;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-          padding: 18px 50px 18px 16px;
-        }  
-        .dropdown-content-years text {
-            float: none;
-            color: white;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-          padding: 18px 50px 18px 16px;
-        }  
-        
-        .dropdown-content text:hover {
-            background-color: lightgray;
-            transition: 0.4s;
-            cursor: pointer;
-        }
-        
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        `
-        return css
-    }
-
-    component() {
-        const container = document.createElement('div')
-        container.classList.add('dropdown')
-
-        const button = document.createElement('button')
-        button.classList.add('dropbtn')
-        button.innerHTML = "Fotos"
-
-        const dropdownContent = document.createElement('div')
-        dropdownContent.classList.add('dropdown-content')
-
-        const linha = document.createElement('div')
-        linha.classList.add('linha')
-
-        const a = document.createElement('text')
-        a.textContent = "Fotos"
-
-        const a2 = document.createElement('text')
-        a.textContent = "Vídeos"
-
-        const a3 = document.createElement('text')
-        a.textContent = "Todos"
-
-        dropdownContent.append(linha, a, a2, a3)
-        button.append(dropdownContent)
-        container.append(button)
-
-        return container
-    }
-}
 
 
 customElements.define('logo-company', logoHeaderMyApllication);
 customElements.define('search-bar', searchBarMyApplication);
-//customElements.define('dropdown-my-application', dropDownMyApplication);
+

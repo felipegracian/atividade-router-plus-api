@@ -33,3 +33,10 @@ const carregarCards = () => {
 
 carregarCards()
 
+
+
+
+
+
+
+

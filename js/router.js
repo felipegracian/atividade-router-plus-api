@@ -1,5 +1,7 @@
 'use strict'
 
+import {carregarCards} from './indexpaginavideos.js'
+
 const routes = {
     '/videos' : '/pages/videos.html'
 }
@@ -15,6 +17,10 @@ const route = async () =>{
     const html = await response.text()
 
     document.getElementById('root').innerHTML = html
+
+    if(window.location.pathname == '/videos'){
+        carregarCards()
+    }
 }
 
 window.route = route
