@@ -156,5 +156,5 @@ class searchBarMyApplication extends HTMLElement {
 
 
 customElements.define('logo-company', logoHeaderMyApllication);
-customElements.define('search-bar', searchBarMyApplication);
+//customElements.define('search-bar', searchBarMyApplication);
 

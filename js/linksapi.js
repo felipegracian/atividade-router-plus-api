@@ -1,5 +1,7 @@
 'use strict'
 
+
+
 export const getImages = async() =>{
     const url = 'https://pixabay.com/api/?key=35962126-f84ad156f06967ac7f15a126c&&image_type=photo&pretty=true'
 
