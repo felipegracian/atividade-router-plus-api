@@ -1,7 +1,7 @@
 'use strict'
 
 import { getImageByQuery } from "./linksapi.js"
-const bar = document.querySelector('#input').value = 'flowers'
+const bar = document.querySelector('#input').value = 'church'
 
 
 
