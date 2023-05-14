@@ -1,11 +1,34 @@
 'use strict'
 
 import { getImageByQuery } from "./linksapi.js"
-const bar = document.querySelector('#input').value = 'church'
+
+const buttonAction = document.querySelector("#buttonSearch")
+
+buttonAction.addEventListener('click', async function(e){
+
+    e.preventDefault()
+
+    const tag = document.querySelector("#input")
+
+    const name = tag.value;
+
+    const jsonImagesAfterFilter = await getImageByQuery(name)
+
+    const containerCardImages = document.getElementById('container-cards')
+
+
+    console.log(jsonImagesAfterFilter.hits)
+
+
+    const campos = jsonImagesAfterFilter.hits.map(criarCardsComOFiltro)
+
+    containerCardImages.replaceChildren(...campos)
+
+})
 
 
 
-const jsonImagesAfterFilter = await getImageByQuery(bar)
+
 
 
 const criarCardsComOFiltro = (lookingFor) => {
@@ -31,21 +54,3 @@ const criarCardsComOFiltro = (lookingFor) => {
 
 }
 
-const carregarCards = () => {
-
-    const containerCardImages = document.getElementById('container-cards')
-
-
-    console.log(jsonImagesAfterFilter.hits)
-
-
-    const campos = jsonImagesAfterFilter.hits.map(criarCardsComOFiltro)
-
-    containerCardImages.replaceChildren(...campos)
-
-
-
-
-}
-
-carregarCards()
