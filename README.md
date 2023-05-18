@@ -9,7 +9,7 @@ outra plataforma para hospedar meu projeto.
 - [  ]  Documentou problemas, se encontrado, para futuras consultas?
 - [ X ]  Foi criado o layout no figma?
 - [ X ]  A página foi construída seguindo o planejado no Figma?
-- [ ]  A página funciona em dispositivos diferentes?
+- [ X ]  A página funciona em dispositivos diferentes?
 - [ X ]  Foi consumida a API escolhida?
 - [ X ]  Foi criado web componentes?
 - [ X ]  Foi criado um padrão de roteamente para as paginas?
